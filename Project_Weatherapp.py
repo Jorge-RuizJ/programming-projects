@@ -26,7 +26,7 @@ class WeatherAPI:
             "appid": self.key,
             "units": "metric"
         }
-        #making the call
+        #making the call with the payload
         response = requests.get(api_url,params=params)
 
         # only if the connection is established
@@ -81,10 +81,8 @@ def fahrenheit_to_celsius(fahrenheit):
 
 # Tkinter Section
 # Things i need to include in this program:
-# I need to add an input so the user can input the name of the city. (If there is a space in city name,
-# then i need to account for that) (do a strip and split??)
+# I need to add an input so the user can input the name of the city. 
 # I need to add Weather description, temperature, maybe humidity, go for all the details i can get.
-# For each one i need to update, make the weather data into a class, and then go from there
 
 root = tk.Tk()  #set up
 root.geometry("350x400") # size of the window at start
@@ -105,7 +103,7 @@ entry.pack(pady=10)
 entry.focus_set()
 
 # Need a button that will start up the program that will fetch weather
-button = tk.Button(root, text="Get Weather!", command=weather_info) # need weather command
+button = tk.Button(root, text="Get Weather!", command=weather_info) 
 button.pack(pady=10)
 
 # Info below the entry box which displays weather information
